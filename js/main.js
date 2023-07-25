@@ -12,10 +12,10 @@ window.onload = function game() {
           playerOne === "paper" ||
           playerOne === "scissors"
         ) {
-          const computerChoice = Math.floor(Math.random() * 3 + 1);
+          const computerChoice = Math.floor(Math.random() * 3);
           const rpsArray = ["rock", "paper", "scissors"];
-          const computer = computerChoice === 1 ? "rock" : computerChoice === 2 ? "paper" : "scissors";
-
+          const computer = rpsArray[computerChoice];
+          
           const result =
             playerOne === computer
               ? "Tie game!"
