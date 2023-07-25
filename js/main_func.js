@@ -27,7 +27,7 @@ window.onload = function game() {
       const computerChoice = getComputerChoice();
       const result = determineWinner(playerChoice, computerChoice);
       displayResult(result);
-      if(askToPlayAgain()) {
+      if (askToPlayAgain()) {
         continue;
       } else {
         thanksForPlaying();
@@ -36,6 +36,7 @@ window.onload = function game() {
     }
   };
 
+  // Other functions
   const getPlayerChoice = () => {
     return prompt("Please enter rock, paper, or scissors.");
   };
@@ -70,5 +71,31 @@ window.onload = function game() {
     return rpsArray[randomNumber];
   };
 
-  
+  const determineWinner = (player, computer) => {
+    const winner =
+      player === computer ? "Tie game!"
+        : player === "rock" && computer === "paper"
+          ? `playerOne: ${player}\nComputer: ${computer}\nComputer wins!`
+          : player === "paper" && computer === "scissors"
+            ? `playerOne: ${player}\nComputer: ${computer}\nComputer wins!`
+            : player === "scissors" && computer === "rock"
+              ? `playerOne: ${player}\nComputer: ${computer}\nComputer wins!`
+              : `playerOne: ${player}\nComputer: ${computer}\nplayerOne wins!`
+
+    return winner;
+  };
+
+  const displayResult = (result) => {
+    alert(result);
+  };
+
+  const askToPlayAgain = () => {
+    return confirm("Shall we play again?");
+  };
+
+  const thanksForPlaying = () => {
+    alert("Ok, thanks for playing!");
+  };
+
+  initGame();
 }
