@@ -37,7 +37,10 @@ window.onload = function game() {
         }
       } else {
         alert("I guess you changed your mind. Maybe next time...");
+        break;
       }
     }
+  } else {
+    alert("Ok, maybe next time.");
   }
 }
